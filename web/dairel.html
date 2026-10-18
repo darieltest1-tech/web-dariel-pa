@@ -4308,6 +4308,7 @@ a.btn-action:hover{color:inherit}
       <button type="button" class="btn-action btn-holoarma" data-sub="iosHologramasMenu" data-sub-title="Hologramas iOS" data-sub-icon="bi-stars"><i class="bi bi-stars"></i>🍎 HOLOGRAMAS</button>
       <button type="button" class="btn-action btn-walkc" data-sub="iosTraspasaMenu" data-sub-title="Traspasa objetos" data-sub-icon="bi-arrow-left-right"><i class="bi bi-arrow-left-right"></i>🍎 TRASPASA OBJETOS</button>
       <button type="button" class="btn-action btn-cielo" data-sub="iosTexturaMenu" data-sub-title="Textura iOS" data-sub-icon="bi-image"><i class="bi bi-image"></i>🍎 TEXTURA</button>
+      <button type="button" class="btn-action btn-cache rx7-wide" data-sub="iosParchesMenu" data-sub-title="Parches 3105" data-sub-icon="bi-file-earmark-binary"><i class="bi bi-file-earmark-binary"></i>🍎 PARCHES 3105</button>
     </div>
 
     <!-- // SUBSECCION: AIMBOTS // -->
@@ -4336,6 +4337,14 @@ a.btn-action:hover{color:inherit}
 <button type="button" class="btn-action btn-cielo" id="cieloIosAltoBtn" data-rx7-button="cielo-ios-alto" aria-disabled="false"><i class="bi bi-cloud-sun-fill"></i>CIELO MOD IOS ALTO</button>
 <button type="button" class="btn-action btn-cielo" id="paredGlooBtn" data-rx7-button="pared-gloo" aria-disabled="false"><i class="bi bi-bricks"></i>PARED GLOO</button>
 <button type="button" class="btn-action btn-cielo" id="texturasBtn" aria-disabled="false"><i class="bi bi-images"></i>TEXTURAS</button>
+<button type="button" class="btn-action btn-back rx7-wide" data-sub-back><i class="bi bi-arrow-left"></i>VOLVER ATRÁS</button>
+</div>
+
+    <!-- // SUBSECCION: PARCHES 3105 // -->
+    <div class="rx7-action-grid ios-submenu" id="iosParchesMenu" style="display:none">
+<button type="button" class="btn-action btn-cielo" id="ptCrearBtn" aria-disabled="false"><i class="bi bi-file-earmark-plus"></i>CREAR PARCHE</button>
+<button type="button" class="btn-action btn-cielo" id="ptEditarBtn" aria-disabled="false"><i class="bi bi-pencil-square"></i>EDITAR PARCHE</button>
+<button type="button" class="btn-action btn-cielo" id="ptExtraerBtn" aria-disabled="false"><i class="bi bi-file-earmark-zip"></i>EXTRAER PARCHE</button>
 <button type="button" class="btn-action btn-back rx7-wide" data-sub-back><i class="bi bi-arrow-left"></i>VOLVER ATRÁS</button>
 </div>
   </div>
@@ -5339,6 +5348,128 @@ a.btn-action:hover{color:inherit}
 </div>
 <!-- // FIN SECCION DE MODALES: GALERIA DE TEXTURAS // -->
 
+<!-- // SECCION DE MODALES: PARCHES 3105 // -->
+
+<style>
+/* // ESTILOS: PARCHES 3105 (usa las variables del tema de la pagina) // */
+.pt-lb{display:block;font-size:.74rem;font-weight:700;letter-spacing:.04em;color:var(--text-muted);margin:.8rem 0 .3rem;text-transform:uppercase}
+.pt-in{width:100%;box-sizing:border-box;background:var(--surface2);color:var(--text);border:1px solid var(--border);border-radius:10px;padding:.6rem .75rem;font-size:.86rem;outline:none;transition:border-color .15s,box-shadow .15s}
+.pt-in:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-glow,transparent)}
+.pt-in option{background:var(--surface);color:var(--text)}
+.pt-hint{font-size:.72rem;color:var(--text-muted);margin:.3rem 0 0}
+.pt-ruta{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;word-break:break-all;color:var(--text-muted);background:var(--surface2);border:1px dashed var(--border);border-radius:10px;padding:.55rem .7rem;min-height:2.2em}
+.pt-drop{border:2px dashed var(--accent);border-radius:14px;background:var(--surface2);padding:1.1rem .8rem;text-align:center;cursor:pointer;transition:background .15s,transform .15s}
+.pt-drop i{font-size:1.9rem;color:var(--accent);display:block;margin-bottom:.3rem}
+.pt-drop strong{font-size:.82rem}
+.pt-drop span.pt-fn{display:block;margin-top:.4rem;font-size:.74rem;color:var(--text-muted);word-break:break-all}
+.pt-drop.pt-drag{background:var(--surface);transform:scale(1.01)}
+.pt-st{margin-top:.7rem;text-align:center;font-size:.82rem;min-height:1.2em}
+.pt-seg{display:flex;gap:.5rem}
+.pt-seg label{flex:1;text-align:center;border:1px solid var(--border);background:var(--surface2);border-radius:10px;padding:.5rem;font-size:.8rem;cursor:pointer}
+.pt-seg input{accent-color:var(--accent);margin-right:.35rem}
+.pt-body{max-height:68vh;overflow-y:auto}
+</style>
+<!-- // MODAL: parcheCrearModal // -->
+<div class="modal fade modal-dark" id="parcheCrearModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-file-earmark-plus me-2" style="color:var(--accent)"></i>CREAR PARCHE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body pt-body">
+                <p style="color:var(--text-muted);font-size:.8rem;text-align:center;margin:0">Empaqueta un archivo en un parche <b>.3105</b>. Se crea en tu dispositivo.</p>
+                <!-- // SECCION: DATOS DEL PARCHE // -->
+                <label class="pt-lb" for="ptCrTipo">Tipo de asset</label>
+                <select id="ptCrTipo" class="pt-in"><option value="avatar">Avatar</option><option value="shader">Shader</option><option value="shaders-pj">Shaders PJ</option></select>
+                <label class="pt-lb" for="ptCrBundle">Bundle ID</label>
+                <select id="ptCrBundle" class="pt-in"><option value="com.dts.freefireth">Free Fire</option><option value="com.dts.freefiremax">Free Fire MAX</option><option value="custom">Otro (escribir Bundle ID)</option></select>
+                <div id="ptCrBundleBox" style="display:none"><label class="pt-lb" for="ptCrBundleCustom">Bundle ID personalizado</label>
+                    <input id="ptCrBundleCustom" class="pt-in" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="com.empresa.juego">
+                    <p class="pt-hint">Formato com.empresa.juego. Con uno propio debes escribir la ruta destino.</p></div>
+                <label class="pt-lb" for="ptCrRutaMode">Ruta destino</label>
+                <select id="ptCrRutaMode" class="pt-in"><option value="auto">Usar una ruta sugerida</option><option value="custom">Escribir una ruta</option></select>
+                <div class="pt-ruta" id="ptCrRutaAuto" style="margin-top:.45rem"></div>
+                <div id="ptCrRutaBox" style="display:none;margin-top:.45rem"><input id="ptCrRutaCustom" class="pt-in" type="text" autocomplete="off" spellcheck="false" placeholder="carpeta/archivo.ext">
+                    <p class="pt-hint">Ruta relativa: sin «/» al inicio ni «..».</p></div>
+                <label class="pt-lb" for="ptCrNombre">Nombre del patch</label>
+                <input id="ptCrNombre" class="pt-in" type="text" placeholder="Aimdrag" autocomplete="off">
+                <label class="pt-lb" for="ptCrSalida">Nombre del archivo de salida (opcional)</label>
+                <input id="ptCrSalida" class="pt-in" type="text" value="patch.3105" autocomplete="off" autocapitalize="off">
+                <!-- // SECCION: ARCHIVO A INCLUIR // -->
+                <label class="pt-lb">Archivo / asset a incluir</label>
+                <input type="file" id="ptCrFile" style="display:none">
+                <div class="pt-drop" id="ptCrDrop"><i class="bi bi-upload"></i><strong>TOCA PARA ELEGIR EL ARCHIVO</strong><span class="pt-fn" id="ptCrFileName"></span></div>
+                <button type="button" id="ptCrBtn" class="btn-action btn-cielo" style="margin-top:.9rem"><i class="bi bi-magic"></i>GENERAR Y DESCARGAR PARCHE</button>
+                <div id="ptCrStatus" class="pt-st"></div>
+            </div>
+            <div class="modal-footer" style="justify-content:center">
+                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // MODAL: parcheEditarModal // -->
+<div class="modal fade modal-dark" id="parcheEditarModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-pencil-square me-2" style="color:var(--accent)"></i>EDITAR PARCHE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body pt-body">
+                <p style="color:var(--text-muted);font-size:.8rem;text-align:center;margin:0">Cambia el nombre o reemplaza el archivo de un parche <b>.3105</b> (sin contraseña).</p>
+                <label class="pt-lb">Patch .3105</label>
+                <input type="file" id="ptEdFile" style="display:none">
+                <div class="pt-drop" id="ptEdDrop"><i class="bi bi-file-earmark-binary"></i><strong>TOCA PARA ELEGIR EL PARCHE</strong><span class="pt-fn" id="ptEdFileName"></span></div>
+                <div id="ptEdCampos" style="display:none">
+                    <label class="pt-lb" for="ptEdRuta">Ruta del archivo (se conserva)</label>
+                    <select id="ptEdRuta" class="pt-in"></select>
+                    <label class="pt-lb" for="ptEdNombre">Nombre del patch</label>
+                    <input id="ptEdNombre" class="pt-in" type="text" autocomplete="off">
+                    <label class="pt-lb" for="ptEdSalida">Nombre del archivo de salida</label>
+                    <input id="ptEdSalida" class="pt-in" type="text" autocomplete="off" autocapitalize="off">
+                    <label class="pt-lb">Archivo de reemplazo (opcional: vacío = dejar el actual)</label>
+                    <input type="file" id="ptEdAsset" style="display:none">
+                <div class="pt-drop" id="ptEdAssetDrop"><i class="bi bi-upload"></i><strong>TOCA PARA ELEGIR EL NUEVO ARCHIVO</strong><span class="pt-fn" id="ptEdAssetName"></span></div>
+                    <button type="button" id="ptEdBtn" class="btn-action btn-cielo" style="margin-top:.9rem"><i class="bi bi-magic"></i>GUARDAR Y DESCARGAR PARCHE</button>
+                </div>
+                <div id="ptEdStatus" class="pt-st"></div>
+            </div>
+            <div class="modal-footer" style="justify-content:center">
+                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // MODAL: parcheExtraerModal // -->
+<div class="modal fade modal-dark" id="parcheExtraerModal" tabindex="-1" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="bi bi-file-earmark-zip me-2" style="color:var(--accent)"></i>EXTRAER PARCHE</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body pt-body">
+                <p style="color:var(--text-muted);font-size:.8rem;text-align:center;margin:0">Guarda en un ZIP los archivos que contiene un parche <b>.3105</b>.</p>
+                <label class="pt-lb">Patch que quieres extraer</label>
+                <input type="file" id="ptExFile" style="display:none">
+                <div class="pt-drop" id="ptExDrop"><i class="bi bi-file-earmark-binary"></i><strong>TOCA PARA ELEGIR EL PARCHE</strong><span class="pt-fn" id="ptExFileName"></span></div>
+                <label class="pt-lb">Protección del patch</label>
+                <div class="pt-seg"><label><input type="radio" name="ptExProt" value="none" checked>Sin contraseña</label><label><input type="radio" name="ptExProt" value="password">Tiene contraseña</label></div>
+                <div id="ptExPassBox" style="display:none"><label class="pt-lb" for="ptExPass">Contraseña del patch</label>
+                    <input id="ptExPass" class="pt-in" type="password" autocomplete="off" placeholder="Escribe la contraseña"></div>
+                <button type="button" id="ptExBtn" class="btn-action btn-cielo" style="margin-top:.9rem"><i class="bi bi-download"></i>EXTRAER CONTENIDO</button>
+                <div id="ptExStatus" class="pt-st"></div>
+            </div>
+            <div class="modal-footer" style="justify-content:center">
+                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- // FIN SECCION DE MODALES: PARCHES 3105 // -->
+
 <!-- // SECCION DE FOOTER // -->
     <footer b-sbu3yio154="" style="background:var(--surface);border-top:1px solid var(--border);color:var(--text-muted);font-size:.78rem;padding:.75rem 1rem;text-align:center;">Idk X dariel © 2026 • Todos los derechos reservados</footer>
 <!-- // FIN SECCION DE FOOTER // -->
@@ -5912,6 +6043,220 @@ window.CONFIG = {
 
 
     // ======================================================
+    // // SECCION PARCHES 3105 (crear / editar / extraer .3105, todo en el navegador) //
+    // Formato: "3105PATCH\0" + binary plist (AES-GCM). No usa el backend.
+    // ======================================================
+    function initParches() {
+        if (!$('parcheCrearModal')) return;
+        var state = { patch: null, asset: null };
+        // ---------- // BLOQUE: FORMATO .3105 (plist binario + AES-GCM + zip) // ----------
+        const te=new TextEncoder(),td=new TextDecoder();
+        function u64(a,o){let n=0n;for(let i=0;i<8;i++)n=(n<<8n)|BigInt(a[o+i]);return n}
+        function readN(a,o,n){let x=0;for(let i=0;i<n;i++)x=x*256+a[o+i];return x}
+        function lenAt(a,pos,info){let l=info&15;if(l!==15)return [l,pos+1];let m=a[pos+1],pow=1<<(m&15),n=readN(a,pos+2,pow);return [n,pos+2+pow]}
+        function parseBplist(buf){let a=new Uint8Array(buf);if(td.decode(a.slice(0,8))!=='bplist00')throw Error('No es un binary plist');let tr=a.length-32,os=a[tr+6],rs=a[tr+7],num=Number(u64(a,tr+8)),top=Number(u64(a,tr+16)),ot=Number(u64(a,tr+24));let offs=[];for(let i=0;i<num;i++)offs.push(readN(a,ot+i*os,os));let seen=new Map();
+         function obj(i){if(seen.has(i))return seen.get(i);let p=offs[i],m=a[p],t=m>>4,lo=m&15;
+          if(t===0){let v=lo===9?true:lo===8?false:null;seen.set(i,v);return v}
+          if(t===1){let n=1<<lo,q=p+1,v=readN(a,q,n);seen.set(i,v);return v}
+          if(t===2){let n=1<<lo,q=p+1,dv=new DataView(a.buffer,a.byteOffset+q,n);let v=n===4?dv.getFloat32(0,false):dv.getFloat64(0,false);seen.set(i,v);return v}
+          if(t===3){let n=8,q=p+1,sec=new DataView(a.buffer,a.byteOffset+q,n).getFloat64(0,false);let v=new Date(Date.UTC(2001,0,1)+sec*1000);seen.set(i,v);return v}
+          if(t===4){let [n,q]=lenAt(a,p,lo),v=a.slice(q,q+n);seen.set(i,v);return v}
+          if(t===5){let [n,q]=lenAt(a,p,lo),v=td.decode(a.slice(q,q+n));seen.set(i,v);return v}
+          if(t===6){let [n,q]=lenAt(a,p,lo),v='';for(let j=0;j<n;j++)v+=String.fromCharCode(readN(a,q+j*2,2));seen.set(i,v);return v}
+          if(t===8){let [n,q]=lenAt(a,p,lo),v=readN(a,q,n);seen.set(i,v);return v}
+          if(t===10||t===12){let [n,q]=lenAt(a,p,lo),v=[];seen.set(i,v);for(let j=0;j<n;j++)v.push(obj(readN(a,q+j*rs,rs)));return v}
+          if(t===13){let [n,q]=lenAt(a,p,lo),v={};seen.set(i,v);for(let j=0;j<n;j++)v[obj(readN(a,q+j*rs,rs))]=obj(readN(a,q+n*rs+j*rs,rs));return v}
+          throw Error('Tipo binary plist no soportado: '+t.toString(16));
+         }
+         return obj(top)
+        }
+        function bytesForInt(n){if(n<=255)return 1;if(n<=65535)return 2;if(n<=0xffffffff)return 4;return 8}
+        function putInt(n,size){let a=new Uint8Array(size);let x=BigInt(n);for(let i=size-1;i>=0;i--){a[i]=Number(x&255n);x>>=8n}return a}
+        function objectBytes(v,refSize){if(v===false||v===true)return new Uint8Array([v?9:8]);if(v===null)return new Uint8Array([0]);if(typeof v==='number'&&Number.isInteger(v)){let s=bytesForInt(v),pow=Math.log2(s);return concat([new Uint8Array([0x10|pow]),putInt(v,s)])}if(typeof v==='number'){let a=new Uint8Array(9);a[0]=0x23;new DataView(a.buffer).setFloat64(1,v,false);return a}if(v instanceof Date){let a=new Uint8Array(9);a[0]=0x33;new DataView(a.buffer).setFloat64(1,(v.getTime()-Date.UTC(2001,0,1))/1000,false);return a}if(typeof v==='string'){let ascii=[...v].every(c=>c.codePointAt(0)<=127);if(ascii){let b=te.encode(v);return concat([marker(5,b.length),b])}let b=new Uint8Array(v.length*2);for(let i=0;i<v.length;i++){b[i*2]=v.charCodeAt(i)>>8;b[i*2+1]=v.charCodeAt(i)&255}return concat([marker(6,v.length),b])}if(v instanceof Uint8Array||v instanceof ArrayBuffer){let b=v instanceof Uint8Array?v:new Uint8Array(v);return concat([marker(4,b.length),b])}if(Array.isArray(v)){let refs=v.map(x=>objectBytes._index(x));return concat([marker(10,v.length),...refs.map(i=>putInt(i,refSize))])}if(typeof v==='object'){let ks=Object.keys(v),refs=ks.map(k=>objectBytes._index(k)),vs=ks.map(k=>objectBytes._index(v[k]));return concat([marker(13,ks.length),...refs.map(i=>putInt(i,refSize)),...vs.map(i=>putInt(i,refSize))])}throw Error('Valor no soportado')}
+        function marker(t,n){if(n<15)return new Uint8Array([(t<<4)|n]);let s=bytesForInt(n),pow=Math.log2(s);return new Uint8Array([(t<<4)|15,0x10|pow,...putInt(n,s)] )}
+        function concat(xs){let z=xs.reduce((n,x)=>n+x.length,0),a=new Uint8Array(z),p=0;for(let x of xs){a.set(x,p);p+=x.length}return a}
+        function makeBplist(root){let objs=[],ids=new Map();function add(v){let key;if(v instanceof Uint8Array)key='D'+Array.from(v).join(',');else if(v instanceof Date)key='T'+v.getTime();else key=typeof v==='object'&&v!==null?'O'+objs.length:typeof v+':'+String(v);if(ids.has(key))return ids.get(key);let i=objs.length;ids.set(key,i);objs.push(v);if(Array.isArray(v))v.forEach(add);else if(v&&typeof v==='object'&&!(v instanceof Uint8Array)&&!(v instanceof Date))Object.keys(v).forEach(k=>{add(k);add(v[k])});return i}objectBytes._index=add;add(root);let rs=bytesForInt(objs.length-1),body=[],offsets=[],pos=8;for(let v of objs){let b=objectBytes(v,rs);offsets.push(pos);body.push(b);pos+=b.length}let os=bytesForInt(pos),ot=pos,head=new Uint8Array([0x62,0x70,0x6c,0x69,0x73,0x74,0x30,0x30]),off=concat(offsets.map(x=>putInt(x,os))),tr=new Uint8Array(32);tr[6]=os;tr[7]=rs;tr.set(putInt(objs.length,8),8);tr.set(putInt(0,8),16);tr.set(putInt(ot,8),24);return concat([head,...body,off,tr])}
+        function concat2(a,b){return concat([a,b])}
+        const ROUTE_CONFIG=Object.freeze({
+          avatar:{base:'Documents/contentcache/Compulsory/ios/gameassetbundles/assetindexer',suffixes:Object.freeze({'com.dts.freefireth':'.U6Zffc4YIR3DsINj3cXvYGAqz58~3D','com.dts.freefiremax':'.YJ~2FW7EkU5pRkVg51NrKyx4LXid8~3D'})},
+          shader:{base:'Documents/contentcache/Optional/ios/gameassetbundles/shaders',suffixes:Object.freeze({'com.dts.freefireth':'.P0K3UG2TfecMBhWMMV~2Fu8ReudIk~3D','com.dts.freefiremax':'.eDjuzR1octvcFd~2BTzimtXF99jqU~3D'})},
+          'shaders-pj':{base:'Documents/contentcache/Optional/ios/optionalavatarres/optionalavatarres_commonab_shader',suffixes:Object.freeze({'com.dts.freefireth':'.BNrjwQsbTrqz6jACY9i6FB6DyYI~3D','com.dts.freefiremax':'.ZOTOLfa7PnFy5QmmkFI10R0wVww~3D'})}
+        });
+        function assetRoute(type,bundleID){const config=ROUTE_CONFIG[type],suffix=config?.suffixes[bundleID];if(!suffix)throw Error('Para este Bundle ID escribe una ruta destino personalizada.');return config.base+suffix}
+        function validateBundleID(bundleID){if(typeof bundleID!=='string'||bundleID.length>255||!/^[A-Za-z0-9][A-Za-z0-9_-]*(?:\.[A-Za-z0-9][A-Za-z0-9_-]*)+$/.test(bundleID))throw Error('El Bundle ID no tiene un formato válido. Usa segmentos separados por puntos, como com.empresa.juego.');return bundleID}
+        function bytes(v){return v instanceof Uint8Array?v:new Uint8Array(v)}
+        async function sha(b){return new Uint8Array(await crypto.subtle.digest('SHA-256',b))}
+        async function aesKey(raw){return crypto.subtle.importKey('raw',raw,{name:'AES-GCM'},false,['encrypt','decrypt'])}
+        function hex(b){return [...b].map(x=>x.toString(16).padStart(2,'0')).join('')}
+        function uuid(){return crypto.randomUUID().toUpperCase()}
+        async function derivePasswordKey(password,salt,iterations){let base=await crypto.subtle.importKey('raw',te.encode(password),{name:'PBKDF2'},false,['deriveKey']);return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt'])}
+        async function decodePatchFile(file,password='',protection='auto'){let raw=new Uint8Array(await file.arrayBuffer()),magic=te.encode('3105PATCH\0');for(let i=0;i<magic.length;i++)if(raw[i]!==magic[i])throw Error('El archivo no empieza con 3105PATCH');let env=parseBplist(raw.slice(magic.length)),protectedPatch=env.isPasswordProtected===true;if(protection==='none'&&protectedPatch)throw Error('El patch sí tiene contraseña. Selecciona “Tiene contraseña”.');if(protection==='password'&&!protectedPatch)throw Error('El patch no tiene contraseña. Selecciona “Sin contraseña”.');let key;if(protectedPatch){if(!password)throw Error('Escribe la contraseña del patch.');let wrapKey=await derivePasswordKey(password,bytes(env.kdfSalt),env.kdfIterations),wrapped=bytes(env.wrappedContentKey),aad=te.encode(`3105PATCH/v${env.keyAADVersion||env.schemaVersion}/key/${env.packageID}`);key=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:wrapped.slice(0,12),additionalData:aad},wrapKey,wrapped.slice(12)))}else{key=bytes(env.publicContentKey)}let c=bytes(env.encryptedPayload),payloadAAD=te.encode(`3105PATCH/v${env.schemaVersion}/payload/${env.packageID}`),cryptoKey=await aesKey(key),plain=new Uint8Array(await crypto.subtle.decrypt({name:'AES-GCM',iv:c.slice(0,12),additionalData:payloadAAD},cryptoKey,c.slice(12))),payload=parseBplist(plain);return {env,payload,key}}
+        function crc32(data){let c=0xffffffff;for(let b of data){c^=b;for(let i=0;i<8;i++)c=(c>>>1)^((c&1)?0xedb88320:0)}return (c^0xffffffff)>>>0}
+        function zipStore(entries){let locals=[],central=[],offset=0,now=new Date(),t=(now.getHours()<<11)|(now.getMinutes()<<5)|(now.getSeconds()/2),d=((now.getFullYear()-1980)<<9)|((now.getMonth()+1)<<5)|now.getDate();for(let e of entries){let name=te.encode(e.name),data=bytes(e.data),crc=crc32(data),head=concat([new Uint8Array([80,75,3,4]),u16(20),u16(0x800),u16(0),u16(t),u16(d),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),name,data]);locals.push(head);let ch=concat([new Uint8Array([80,75,1,2]),u16(20),u16(20),u16(0x800),u16(0),u16(t),u16(d),u32(crc),u32(data.length),u32(data.length),u16(name.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset),name]);central.push(ch);offset+=head.length}let cd=concat(central),all=concat(locals.concat([cd,concat([new Uint8Array([80,75,5,6]),u16(0),u16(0),u16(entries.length),u16(entries.length),u32(cd.length),u32(offset),u16(0)])]));return all}
+        function validateRoute(r){if(!r||r.startsWith('/')||r.includes('..')||r.includes('\\')||r.split('/').some(x=>!x||x==='.' ))throw Error('La ruta debe ser relativa, sin segmentos vacíos, \'..\' ni barras invertidas.')}
+        function u16(n){return new Uint8Array([n&255,(n>>>8)&255])}function u32(n){return new Uint8Array([n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255])}
+        // ---------- // BLOQUE: UTILIDADES DE INTERFAZ // ----------
+        function setSt(id, msg, kind) {
+            var el = $(id); if (!el) return;
+            el.textContent = msg;
+            el.style.color = kind === 'err' ? '#ef4444' : kind === 'ok' ? '#22c55e' : 'var(--text-muted)';
+            el.style.whiteSpace = 'pre-line';
+        }
+        function descargar(blob, nombre) {
+            var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nombre;
+            document.body.appendChild(a); a.click(); a.remove();
+            setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+        }
+        function limpiarNombre(s) { return (s || 'patch').replace(/[^\w .-]+/g, '_'); }
+        function drop(zoneId, inputId, onFile, labelId) {
+            var zone = $(zoneId), input = $(inputId); if (!zone || !input) return;
+            function tomar(f) {
+                if (!f) return;
+                var lb = $(labelId); if (lb) lb.textContent = f.name + ' · ' + f.size.toLocaleString() + ' bytes';
+                onFile(f);
+            }
+            zone.addEventListener('click', function () { input.click(); });
+            input.addEventListener('change', function () { tomar(input.files[0]); });
+            zone.addEventListener('dragover', function (e) { e.preventDefault(); zone.classList.add('pt-drag'); });
+            zone.addEventListener('dragleave', function () { zone.classList.remove('pt-drag'); });
+            zone.addEventListener('drop', function (e) {
+                e.preventDefault(); zone.classList.remove('pt-drag');
+                var f = e.dataTransfer.files[0]; if (!f) return;
+                try { var dt = new DataTransfer(); dt.items.add(f); input.files = dt.files; } catch (x) {}
+                tomar(f);
+            });
+        }
+        function es3105(f) { return f && /\.3105$/i.test(f.name); }
+        function msgErr(e) { return 'Error: ' + (e && e.message ? e.message : e); }
+        function registrarParche(tipo, nombre) {
+            registrarDescarga('Parche', tipo, [{ label: 'Nombre', name: String(nombre || '').slice(0, 80) }]);
+        }
+        function leer(f) { return f.arrayBuffer().then(function (b) { return new Uint8Array(b); }); }
+
+        // ---------- // BLOQUE: CREAR PARCHE // ----------
+        function crSync() {
+            var custom = $('ptCrBundle').value === 'custom';
+            $('ptCrBundleBox').style.display = custom ? 'block' : 'none';
+            var sel = $('ptCrRutaMode');
+            sel.querySelector('option[value="auto"]').disabled = custom;
+            if (custom) sel.value = 'custom';
+            var rutaCustom = sel.value === 'custom';
+            $('ptCrRutaBox').style.display = rutaCustom ? 'block' : 'none';
+            $('ptCrRutaAuto').style.display = rutaCustom ? 'none' : 'block';
+            if (!rutaCustom) {
+                try { $('ptCrRutaAuto').textContent = assetRoute($('ptCrTipo').value, $('ptCrBundle').value); }
+                catch (e) { $('ptCrRutaAuto').textContent = ''; }
+            }
+        }
+        ['ptCrTipo', 'ptCrBundle', 'ptCrRutaMode'].forEach(function (id) { on(id, 'change', crSync); });
+        crSync();
+        drop('ptCrDrop', 'ptCrFile', function (f) {
+            leer(f).then(function (b) { state.asset = b; setSt('ptCrStatus', 'Asset cargado: ' + f.name + ' (' + b.length.toLocaleString() + ' bytes)', 'ok'); });
+        }, 'ptCrFileName');
+        on('ptCrBtn', 'click', function () {
+            var btn = $('ptCrBtn'); btn.disabled = true;
+            crearParche().then(function () { btn.disabled = false; }, function (e) { console.error(e); setSt('ptCrStatus', msgErr(e), 'err'); btn.disabled = false; });
+        });
+        async function crearParche() {
+            var name = $('ptCrNombre').value.trim();
+            if (!name) throw Error('Escribe el nombre del patch.');
+            if (!state.asset) throw Error('Elige el archivo/asset que va dentro del patch.');
+            var bundleID = $('ptCrBundle').value === 'custom' ? validateBundleID($('ptCrBundleCustom').value.trim()) : $('ptCrBundle').value;
+            var route;
+            if ($('ptCrBundle').value === 'custom' || $('ptCrRutaMode').value === 'custom') { route = $('ptCrRutaCustom').value.trim(); validateRoute(route); }
+            else route = assetRoute($('ptCrTipo').value, bundleID);
+            var asset = state.asset, id = uuid(), now = new Date();
+            var r = { id: id, bundleID: bundleID, relativePath: route, replacementFilename: route.split('/').pop(), replacementData: asset };
+            var dig = {}; dig[id] = await sha(asset);
+            var payload = { project: { id: id, name: name, author: '', isPrivate: false, createdAt: now, updatedAt: now, bundleIdentifiers: [bundleID], directories: [], rules: [r] }, replacementDigests: dig };
+            var key = crypto.getRandomValues(new Uint8Array(32));
+            var env = { schemaVersion: 1, packageID: id, isPasswordProtected: false, publicContentKey: key, keyFingerprint: await sha(key) };
+            var fn = await empaquetar(env, payload, key, $('ptCrSalida').value.trim() || name);
+            setSt('ptCrStatus', 'Generado correctamente: ' + fn.nombre + '\nNombre: ' + name + '\nTamaño: ' + fn.size.toLocaleString() + ' bytes', 'ok');
+            registrarParche('Crear', name);
+        }
+        async function empaquetar(env, payload, key, salida) {
+            var plain = makeBplist(payload), nonce = crypto.getRandomValues(new Uint8Array(12));
+            var enc = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv: nonce, additionalData: te.encode('3105PATCH/v' + env.schemaVersion + '/payload/' + env.packageID) }, await aesKey(key), plain));
+            env.encryptedPayload = concat2(nonce, enc);
+            var out = concat2(te.encode('3105PATCH\0'), makeBplist(env)), nombre = salida;
+            if (!/\.3105$/i.test(nombre)) nombre += '.3105';
+            descargar(new Blob([out], { type: 'application/octet-stream' }), nombre);
+            return { nombre: nombre, size: out.length };
+        }
+
+        // ---------- // BLOQUE: EDITAR PARCHE // ----------
+        drop('ptEdDrop', 'ptEdFile', function (f) {
+            if (!es3105(f)) { state.patch = null; setSt('ptEdStatus', 'Error: solo se aceptan archivos .3105.', 'err'); return; }
+            abrirParche(f).catch(function (e) { state.patch = null; setSt('ptEdStatus', msgErr(e), 'err'); });
+        }, 'ptEdFileName');
+        drop('ptEdAssetDrop', 'ptEdAsset', function (f) {
+            leer(f).then(function (b) { state.edAsset = b; setSt('ptEdStatus', 'Asset nuevo: ' + f.name + ' (' + b.length.toLocaleString() + ' bytes)', 'ok'); });
+        }, 'ptEdAssetName');
+        async function abrirParche(file) {
+            var d = await decodePatchFile(file, '', 'auto'), p = d.payload.project, rules = p.rules || [];
+            if (!rules.length) throw Error('El patch no contiene reglas.');
+            rules.forEach(function (r) { validateBundleID(r.bundleID); });
+            state.patch = d;
+            $('ptEdNombre').value = p.name || '';
+            $('ptEdSalida').value = limpiarNombre(p.name) + '.3105';
+            var sel = $('ptEdRuta'); sel.innerHTML = '';
+            rules.forEach(function (r) { var o = document.createElement('option'); o.value = r.relativePath; o.textContent = r.relativePath; sel.appendChild(o); });
+            $('ptEdCampos').style.display = 'block';
+            setSt('ptEdStatus', 'Patch cargado: ' + (p.name || '(sin nombre)') + '\nReglas: ' + rules.length, 'ok');
+        }
+        on('ptEdBtn', 'click', function () {
+            var btn = $('ptEdBtn'); btn.disabled = true;
+            editarParche().then(function () { btn.disabled = false; }, function (e) { console.error(e); setSt('ptEdStatus', msgErr(e), 'err'); btn.disabled = false; });
+        });
+        async function editarParche() {
+            if (!state.patch) throw Error('Carga primero el patch existente.');
+            var name = $('ptEdNombre').value.trim(); if (!name) throw Error('Escribe el nombre del patch.');
+            var env = state.patch.env, payload = state.patch.payload, key = state.patch.key;
+            var rules = payload.project.rules, r = rules.filter(function (x) { return x.relativePath === $('ptEdRuta').value; })[0] || rules[0];
+            if (state.edAsset) { r.replacementData = state.edAsset; payload.replacementDigests[r.id] = await sha(state.edAsset); }
+            payload.project.name = name; payload.project.updatedAt = new Date();
+            var fn = await empaquetar(env, payload, key, $('ptEdSalida').value.trim() || name);
+            setSt('ptEdStatus', 'Generado correctamente: ' + fn.nombre + '\nNombre: ' + name + '\nTamaño: ' + fn.size.toLocaleString() + ' bytes', 'ok');
+            registrarParche('Editar', name);
+        }
+
+        // ---------- // BLOQUE: EXTRAER PARCHE // ----------
+        drop('ptExDrop', 'ptExFile', function (f) {
+            if (!es3105(f)) { $('ptExFile').value = ''; setSt('ptExStatus', 'Error: solo se aceptan archivos .3105.', 'err'); return; }
+            setSt('ptExStatus', '', '');
+        }, 'ptExFileName');
+        document.querySelectorAll('input[name="ptExProt"]').forEach(function (rd) {
+            rd.addEventListener('change', function () { $('ptExPassBox').style.display = document.querySelector('input[name="ptExProt"]:checked').value === 'password' ? 'block' : 'none'; });
+        });
+        on('ptExBtn', 'click', function () {
+            var f = $('ptExFile').files[0];
+            if (!f) return setSt('ptExStatus', 'Selecciona un patch .3105.', 'err');
+            if (!es3105(f)) return setSt('ptExStatus', 'Error: solo se aceptan archivos .3105.', 'err');
+            extraer(f).catch(function (e) { console.error(e); setSt('ptExStatus', msgErr(e), 'err'); });
+        });
+        async function extraer(file) {
+            var prot = document.querySelector('input[name="ptExProt"]:checked').value, pass = prot === 'password' ? $('ptExPass').value : '';
+            var d = await decodePatchFile(file, pass, prot), p = d.payload.project, rules = p.rules || [], entries = [];
+            var manifest = { name: p.name, packageID: p.id, schemaVersion: d.env.schemaVersion, rules: [] };
+            rules.forEach(function (r, i) {
+                var safe = (r.bundleID || 'unknown').replace(/[^A-Za-z0-9._-]/g, '_'), nm = 'rules/' + String(i + 1).padStart(3, '0') + '_' + safe + '/' + r.relativePath;
+                entries.push({ name: nm, data: r.replacementData });
+                manifest.rules.push({ bundleID: r.bundleID, relativePath: r.relativePath, replacementFilename: r.replacementFilename, file: nm, bytes: bytes(r.replacementData).length });
+            });
+            entries.unshift({ name: 'manifest.json', data: te.encode(JSON.stringify(manifest, null, 2)) });
+            var zip = zipStore(entries), fn = limpiarNombre(p.name) + '-contenido.zip';
+            descargar(new Blob([zip], { type: 'application/zip' }), fn);
+            setSt('ptExStatus', 'Extraído: ' + (entries.length - 1) + ' archivo(s), ' + zip.length.toLocaleString() + ' bytes en ' + fn, 'ok');
+        }
+    }
+
+    function initParchesMenu() {
+        [['ptCrearBtn', 'parcheCrearModal'], ['ptEditarBtn', 'parcheEditarModal'], ['ptExtraerBtn', 'parcheExtraerModal']].forEach(function (p) {
+            on(p[0], 'click', function () { var m = bsModal(p[1]); if (m) m.show(); });
+        });
+    }
+    // ======================================================
     // // SECCION NAVEGACION (submenus iOS y modo manual dentro de la misma pagina) //
     // ======================================================
     function initNav() {
@@ -5954,7 +6299,7 @@ window.CONFIG = {
     // // INICIO //
     // ======================================================
     document.addEventListener('DOMContentLoaded', function () {
-        initNav(); initDrop(); initHolo(); initAimbots(); initCielo(); initTexturas(); initTraspasa();
+        initNav(); initDrop(); initHolo(); initAimbots(); initCielo(); initTexturas(); initTraspasa(); initParches(); initParchesMenu();
         if (!keyValida()) mostrarGateKey();
     });
 })();
