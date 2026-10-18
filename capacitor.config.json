@@ -1,0 +1,15 @@
+{
+  "appId": "com.dariel.idkx",
+  "appName": "Idk X dariel",
+  "webDir": "www",
+  "backgroundColor": "#071522",
+  "ios": {
+    "contentInset": "never",
+    "limitsNavigationsToAppBoundDomains": false,
+    "scrollEnabled": true
+  },
+  "plugins": {
+    "SplashScreen": { "launchAutoHide": true, "launchShowDuration": 800, "backgroundColor": "#071522" },
+    "StatusBar": { "style": "DARK", "overlaysWebView": true }
+  }
+}
