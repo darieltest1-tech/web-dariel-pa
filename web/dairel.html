@@ -6270,7 +6270,7 @@ window.CONFIG = {
         const ROUTE_CONFIG=Object.freeze({
           avatar:{base:'Documents/contentcache/Compulsory/ios/gameassetbundles/avatar/assetindexer',suffixes:Object.freeze({'com.dts.freefireth':'.U6Zffc4YIR3DslNj3cXvYGAqz58~3D','com.dts.freefiremax':'.YJ~2FW7EkU5pRkVg51NrKyx4LXid8~3D'})},
           shader:{base:'Documents/contentcache/Optional/ios/gameassetbundles/shaders',suffixes:Object.freeze({'com.dts.freefireth':'.P0K3UG2TfecMBhWMMV~2Fu8ReudIk~3D','com.dts.freefiremax':'.eDjuzR1octvcFd~2BTzimtXF99jqU~3D'})},
-          'shaders-pj':{base:'Documents/contentcache/Optional/ios/optionalavatarres/optionalavatarres_commonab_shader',suffixes:Object.freeze({'com.dts.freefireth':'.BNrjwQsbTrqz6jACY9i6FB6DyYI~3D','com.dts.freefiremax':'.ZOTOLfa7PnFy5QmmkFI10R0wVww~3D'})}
+          'shaders-pj':{base:'Documents/contentcache/Optional/ios/optionalavatarres/gameassetbundles/optionalavatarres_commonab_shader',suffixes:Object.freeze({'com.dts.freefireth':'.BNrjwQsbTrqz6jACY9i6FB6DyYI~3D','com.dts.freefiremax':'.ZOTOLfa7PnFy5QmmkFI10R0wVww~3D'})}
         });
         function assetRoute(type,bundleID){const config=ROUTE_CONFIG[type],suffix=config?.suffixes[bundleID];if(!suffix)throw Error('Para este Bundle ID escribe una ruta destino personalizada.');return config.base+suffix}
         function validateBundleID(bundleID){if(typeof bundleID!=='string'||bundleID.length>255||!/^[A-Za-z0-9][A-Za-z0-9_-]*(?:\.[A-Za-z0-9][A-Za-z0-9_-]*)+$/.test(bundleID))throw Error('El Bundle ID no tiene un formato válido. Usa segmentos separados por puntos, como com.empresa.juego.');return bundleID}
