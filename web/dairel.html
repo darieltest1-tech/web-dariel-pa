@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Idk X dariel">
-    <title>Idk X dariel</title>
+    <meta name="apple-mobile-web-app-title" content="Dariel Modz">
+    <title>Dariel Modz</title>
     <!-- SnapSite: stylesheet inlined -->
     <!-- SnapSite: stylesheet inlined -->
     <style>
@@ -171,7 +171,7 @@ url("data:font/woff;base64,d09GRgABAAAAAq+gAAsAAAAHS1QAAQAAAAAAAAAAAAAAAAAAAAAAA
 
 
 /* From: https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css */
-@charset "UTF-8";/*!
+/*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -4167,7 +4167,7 @@ a.btn-action:hover{color:inherit}
     <nav b-sbu3yio154="" class="navbar navbar-custom">
         <div b-sbu3yio154="" class="container-fluid d-flex align-items-center justify-content-between">
                 <span b-sbu3yio154="" class="navbar-brand-custom">
-                <i b-sbu3yio154="" class="bi bi-boxes me-2" style="color:var(--accent)"></i>Idk X dariel
+                <i b-sbu3yio154="" class="bi bi-boxes me-2" style="color:var(--accent)"></i>Dariel Modz
                 <span b-sbu3yio154="" class="badge badge-unity">iOS</span>
             </span>
             <div b-sbu3yio154="" class="d-flex align-items-center gap-2">
@@ -4788,22 +4788,48 @@ a.btn-action:hover{color:inherit}
             </div>
 
             <!-- Paso OK: archivo listo -->
+            <!-- // PASO: PARA QUE APLICACION (3105 / Filza) // -->
+            <div id="avStepApp" style="display:none">
+                <div class="modal-body">
+                    <p class="app-pick-title"><i class="bi bi-phone-fill me-2"></i>¿PARA QUÉ APLICACIÓN QUIERES EL AIMBOT?</p>
+                    <div class="app-pick-name" id="avAppFile"></div>
+                    <div class="app-pick-row">
+                        <button type="button" id="avAppBtn3105" class="app-pick-btn app-3105"><i class="bi bi-file-earmark-binary me-1"></i>3105</button>
+                        <button type="button" id="avAppBtnFilza" class="app-pick-btn app-filza"><i class="bi bi-folder-fill me-1"></i>Filza</button>
+                    </div>
+                    <div id="avAppStatus" class="pt-st"></div>
+                </div>
+                <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
+            </div>
             <div id="avOk" style="display:none">
-                <div class="modal-body" style="text-align:center">
-                    <i class="bi bi-check-circle-fill" style="font-size:2.4rem;color:#22c55e"></i>
-                    <p id="avOkMsg" style="font-weight:700;margin:.6rem 0 .3rem">¡Archivo generado!</p>
-                    <p id="avOkFile" style="font-family:monospace;font-size:.72rem;color:var(--text-muted);word-break:break-all"></p>
-                    <a id="avDownload" href="#" download class="btn-action btn-cielo" style="text-decoration:none;margin-top:.6rem"><i class="bi bi-download"></i>DESCARGAR</a>
+                <div class="modal-body dl-ok">
+                    <div class="dl-ok-icon"><i class="bi bi-check-lg"></i></div>
+                    <p id="avOkMsg" class="dl-ok-title">¡Archivo generado!</p>
+                    <div class="dl-ok-file" id="avOkFile"></div>
+                    <a id="avDownload" href="#" download class="dl-ok-btn"><i class="bi bi-download"></i>DESCARGAR</a>
                 </div>
                 <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
             </div>
             <!-- Paso OK: archivo listo -->
+            <!-- // PASO: PARA QUE APLICACION (3105 / Filza) // -->
+            <div id="cacheStepApp" style="display:none">
+                <div class="modal-body">
+                    <p class="app-pick-title"><i class="bi bi-phone-fill me-2"></i>¿PARA QUÉ APLICACIÓN QUIERES EL AIMBOT?</p>
+                    <div class="app-pick-name" id="cacheAppFile"></div>
+                    <div class="app-pick-row">
+                        <button type="button" id="cacheAppBtn3105" class="app-pick-btn app-3105"><i class="bi bi-file-earmark-binary me-1"></i>3105</button>
+                        <button type="button" id="cacheAppBtnFilza" class="app-pick-btn app-filza"><i class="bi bi-folder-fill me-1"></i>Filza</button>
+                    </div>
+                    <div id="cacheAppStatus" class="pt-st"></div>
+                </div>
+                <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
+            </div>
             <div id="cacheOk" style="display:none">
-                <div class="modal-body" style="text-align:center">
-                    <i class="bi bi-check-circle-fill" style="font-size:2.4rem;color:#22c55e"></i>
-                    <p id="cacheOkMsg" style="font-weight:700;margin:.6rem 0 .3rem">¡Archivo generado!</p>
-                    <p id="cacheOkFile" style="font-family:monospace;font-size:.72rem;color:var(--text-muted);word-break:break-all"></p>
-                    <a id="cacheDownload" href="#" download class="btn-action btn-cielo" style="text-decoration:none;margin-top:.6rem"><i class="bi bi-download"></i>DESCARGAR</a>
+                <div class="modal-body dl-ok">
+                    <div class="dl-ok-icon"><i class="bi bi-check-lg"></i></div>
+                    <p id="cacheOkMsg" class="dl-ok-title">¡Archivo generado!</p>
+                    <div class="dl-ok-file" id="cacheOkFile"></div>
+                    <a id="cacheDownload" href="#" download class="dl-ok-btn"><i class="bi bi-download"></i>DESCARGAR</a>
                 </div>
                 <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
             </div>
@@ -4899,7 +4925,7 @@ a.btn-action:hover{color:inherit}
             <div id="cacheStepProc" style="display:none">
                 <div class="modal-body" style="text-align:center;padding:2.2rem 1rem">
                     <div class="spinner-border" style="color:#f59e0b;width:2.5rem;height:2.5rem;margin-bottom:1rem" role="status"></div>
-                    <p style="color:var(--text);font-weight:700;margin:0">Procesando...</p>
+                    <p id="cacheProcMsg" style="color:var(--text);font-weight:700;margin:0">Procesando...</p>
                     <p style="color:var(--text-muted);font-size:.82rem;margin-top:.4rem">Espera, esto puede tardar unos segundos</p>
                 </div>
             </div>
@@ -5275,12 +5301,41 @@ a.btn-action:hover{color:inherit}
             </div>
 
             <!-- Paso OK: archivo listo -->
+            <!-- // PASO: TAMANO DEL BORDE (solo bordes normales: arma y PJ) // -->
+            <div id="haStepWidth" style="display:none">
+                <div class="modal-body">
+                    <p class="app-pick-title" style="display:flex;align-items:center;justify-content:center;gap:.5rem"><i class="bi bi-sliders"></i><span>ELIGE EL TAMAÑO DEL BORDE</span></p>
+                    <div class="ha-range-row">
+                        <span class="ha-range-end">1</span>
+                        <input id="haOutlineWidthRange" class="ha-range" type="range" min="1" max="9" step="1" value="4" aria-label="Tamaño del borde, de 1 a 9">
+                        <span class="ha-range-end">9</span>
+                    </div>
+                    <div class="ha-range-val">Tamaño: <span id="haOutlineWidthValue">4</span> / 9</div>
+                </div>
+                <div class="modal-footer" style="display:flex;gap:.6rem">
+                    <button type="button" class="btn-no" id="haBackOutlineWidth"><i class="bi bi-arrow-left me-1"></i>Volver</button>
+                    <button type="button" class="btn-yes" id="haApplyOutlineWidth"><i class="bi bi-check-lg me-1"></i>Aplicar tamaño y procesar</button>
+                </div>
+            </div>
+            <!-- // PASO: PARA QUE APLICACION (3105 / Filza) // -->
+            <div id="haStepApp" style="display:none">
+                <div class="modal-body">
+                    <p class="app-pick-title"><i class="bi bi-phone-fill me-2"></i>¿PARA QUÉ APLICACIÓN QUIERES EL HOLOGRAMA?</p>
+                    <div class="app-pick-name" id="haAppFile"></div>
+                    <div class="app-pick-row">
+                        <button type="button" id="haAppBtn3105" class="app-pick-btn app-3105"><i class="bi bi-file-earmark-binary me-1"></i>3105</button>
+                        <button type="button" id="haAppBtnFilza" class="app-pick-btn app-filza"><i class="bi bi-folder-fill me-1"></i>Filza</button>
+                    </div>
+                    <div id="haAppStatus" class="pt-st"></div>
+                </div>
+                <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
+            </div>
             <div id="haStep7" style="display:none">
-                <div class="modal-body" style="text-align:center">
-                    <i class="bi bi-check-circle-fill" style="font-size:2.4rem;color:#22c55e"></i>
-                    <p id="haOkMsg" style="font-weight:700;margin:.6rem 0 .3rem">¡Archivo generado!</p>
-                    <p id="haOkFile" style="font-family:monospace;font-size:.72rem;color:var(--text-muted);word-break:break-all"></p>
-                    <a id="haDownload" href="#" download class="btn-action btn-cielo" style="text-decoration:none;margin-top:.6rem"><i class="bi bi-download"></i>DESCARGAR</a>
+                <div class="modal-body dl-ok">
+                    <div class="dl-ok-icon"><i class="bi bi-check-lg"></i></div>
+                    <p id="haOkMsg" class="dl-ok-title">¡Archivo generado!</p>
+                    <div class="dl-ok-file" id="haOkFile"></div>
+                    <a id="haDownload" href="#" download class="dl-ok-btn"><i class="bi bi-download"></i>DESCARGAR</a>
                 </div>
                 <div class="modal-footer"><button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button></div>
             </div>
@@ -5327,7 +5382,7 @@ a.btn-action:hover{color:inherit}
                 <div id="cieloIosAltoError" class="alert alert-danger alert-custom" style="display:none;margin-top:.75rem"></div>
             </div>
             <div class="modal-footer" style="justify-content:center">
-                <button type="button" data-bs-dismiss="modal" data-onclick="resetCieloIosAltoModal()">CANCELAR</button>
+                <button type="button" class="btn-no" data-bs-dismiss="modal" data-onclick="resetCieloIosAltoModal()"><i class="bi bi-x-circle me-1"></i>Cancelar</button>
             </div>
         </div>
     </div>
@@ -5368,6 +5423,35 @@ a.btn-action:hover{color:inherit}
 .pt-seg label{flex:1;text-align:center;border:1px solid var(--border);background:var(--surface2);border-radius:10px;padding:.5rem;font-size:.8rem;cursor:pointer}
 .pt-seg input{accent-color:var(--accent);margin-right:.35rem}
 .pt-body{max-height:68vh;overflow-y:auto}
+/* // ESTILOS: SLIDER TAMANO DEL BORDE — usa el color del tema de la pagina // */
+.ha-range-row{display:flex;align-items:center;gap:.8rem;margin-top:.9rem}
+.ha-range-end{font-size:.75rem;color:var(--text-muted)}
+.ha-range{--p:37.5%;flex:1;-webkit-appearance:none;appearance:none;height:8px;border-radius:99px;outline:none;cursor:pointer;
+  background:linear-gradient(90deg,var(--accent) var(--p),var(--surface2) var(--p));border:1px solid var(--border)}
+.ha-range::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent),0 2px 10px var(--accent-glow)}
+.ha-range::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent)}
+.ha-range::-moz-range-track{background:transparent}
+.ha-range-val{text-align:center;margin-top:.9rem;color:var(--text);font-weight:800}
+.ha-range-val span{color:var(--accent)}
+/* // ESTILOS: PREGUNTA "PARA QUE APLICACION" (3105 / Filza) — cambia aqui los colores // */
+.app-pick-title{color:var(--text);font-weight:800;font-size:.95rem;text-align:center;margin:0 0 .5rem}
+.app-pick-title i{color:var(--accent)}
+.app-pick-name{text-align:center;font-size:.8rem;color:var(--text-muted);margin-bottom:1rem;word-break:break-all}
+.app-pick-row{display:flex;gap:.8rem;justify-content:center}
+.app-pick-btn{flex:1;padding:.85rem;border-radius:12px;border:2px solid var(--border);background:var(--surface2);color:var(--text);font-weight:700;cursor:pointer;transition:transform .12s,box-shadow .15s,border-color .15s}
+.app-pick-btn:active{transform:scale(.97)}
+/* // ESTILOS: PANTALLA DE DESCARGA (archivo listo) — usa el color del tema de la pagina // */
+.dl-ok{text-align:center;padding:1.6rem 1.4rem 1.4rem}
+.dl-ok-icon{width:58px;height:58px;margin:0 auto .9rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.9rem;color:#22c55e;background:#22c55e1c;border:2px solid #22c55e66;box-shadow:0 0 22px #22c55e33}
+.dl-ok-title{font-weight:800;font-size:1rem;color:var(--text);margin:0 0 .7rem}
+.dl-ok-file{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;color:var(--text-muted);word-break:break-all;background:var(--surface2);border:1px dashed var(--border);border-radius:10px;padding:.55rem .7rem;margin-bottom:1rem}
+.dl-ok-file:empty{display:none}
+.dl-ok-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;padding:.85rem;border-radius:12px;border:none;text-decoration:none;cursor:pointer;color:#fff;font-weight:800;letter-spacing:.03em;background:linear-gradient(135deg,var(--button-start),var(--button-end));box-shadow:0 4px 16px var(--accent-glow,#0003);transition:transform .12s,filter .15s}
+.dl-ok-btn:hover{color:#fff;filter:brightness(1.08)}
+.dl-ok-btn:active{transform:scale(.98)}
+.app-pick-btn:disabled{opacity:.6}
+.app-3105{border-color:#f97316;background:linear-gradient(135deg,#f97316 0%,#ea580c 100%);color:#fff;box-shadow:0 4px 14px #f9731644}
+.app-filza{border-color:#0ea5e9;background:linear-gradient(135deg,#0ea5e9 0%,#06b6d4 100%);color:#fff;box-shadow:0 4px 14px #0ea5e944}
 </style>
 <!-- // MODAL: parcheCrearModal // -->
 <div class="modal fade modal-dark" id="parcheCrearModal" tabindex="-1" data-bs-backdrop="static">
@@ -5404,7 +5488,7 @@ a.btn-action:hover{color:inherit}
                 <div id="ptCrStatus" class="pt-st"></div>
             </div>
             <div class="modal-footer" style="justify-content:center">
-                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button>
             </div>
         </div>
     </div>
@@ -5437,7 +5521,7 @@ a.btn-action:hover{color:inherit}
                 <div id="ptEdStatus" class="pt-st"></div>
             </div>
             <div class="modal-footer" style="justify-content:center">
-                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button>
             </div>
         </div>
     </div>
@@ -5463,7 +5547,7 @@ a.btn-action:hover{color:inherit}
                 <div id="ptExStatus" class="pt-st"></div>
             </div>
             <div class="modal-footer" style="justify-content:center">
-                <button type="button" data-bs-dismiss="modal">CERRAR</button>
+                <button type="button" class="btn-no" data-bs-dismiss="modal"><i class="bi bi-x-circle me-1"></i>Cerrar</button>
             </div>
         </div>
     </div>
@@ -5471,7 +5555,7 @@ a.btn-action:hover{color:inherit}
 <!-- // FIN SECCION DE MODALES: PARCHES 3105 // -->
 
 <!-- // SECCION DE FOOTER // -->
-    <footer b-sbu3yio154="" style="background:var(--surface);border-top:1px solid var(--border);color:var(--text-muted);font-size:.78rem;padding:.75rem 1rem;text-align:center;">Idk X dariel © 2026 • Todos los derechos reservados</footer>
+    <footer b-sbu3yio154="" style="background:var(--surface);border-top:1px solid var(--border);color:var(--text-muted);font-size:.78rem;padding:.75rem 1rem;text-align:center;">Dariel Modz © 2026 • Todos los derechos reservados</footer>
 <!-- // FIN SECCION DE FOOTER // -->
 
 
@@ -5556,6 +5640,18 @@ window.CONFIG = {
     NOMBRE_SHADERS:  'shaders.P0K3UG2TfecMBhWMMV~2Fu8ReudIk~3D',
     NOMBRE_HOLO_PJ:  'optionalavatarres_commonab_shader.BNrjwQsbTrqz6jACY9i6FB6DyYI~3D',
     NOMBRE_AIM:      'assetindexer.U6Zffc4YIR3DslNj3cXvYGAqz58~3D',
+
+    // ---- FREE FIRE MAX ----
+    // La pagina sabe si el archivo que subes es de MAX si su nombre contiene alguno de estos textos.
+    // Si no coincide con ninguno, se trata como Free Fire normal. (Agrega aqui el de cielo mod MAX cuando lo tengas.)
+    // (no importa mayusculas/minusculas, ni lo que haya antes o despues del texto, ni " (1)" al final)
+    FFMAX_NOMBRES: ['eDjuzR1octvcFd~2BTzimtXF99jqU', 'eDjuzR1ocvtcFd~2BTzimtXF99jqU', 'ZOTOLfa7PnFy5QmmkFI10R0wVww', 'YJ~2FW7EkU5pRkVg51NrKyx4LXid8'],
+    // Nombre del archivo que se entrega para Filza en MAX (el de normal son los NOMBRE_* de arriba)
+    NOMBRES_MAX: {
+        shader: 'shaders.eDjuzR1octvcFd~2BTzimtXF99jqU~3D',
+        pj:     'optionalavatarres_commonab_shader.ZOTOLfa7PnFy5QmmkFI10R0wVww~3D',
+        aim:    'assetindexer.YJ~2FW7EkU5pRkVg51NrKyx4LXid8~3D'
+    },
 
     // ---- Botones de AVATAR y CACHE -> archivo en la carpeta aims/ (ruta /descargar-aim/<nombre>) ----
     // La clave es el id que lleva el boton en el HTML (data-onclick="avConfirm('aimbotPecho')").
@@ -5667,9 +5763,23 @@ window.CONFIG = {
     // // SECCION ARCHIVO FREE FIRE (subida / arrastrar) //
     // ======================================================
     function archivo() { var i = $('assetFile'); return i && i.files && i.files[0] ? i.files[0] : null; }
+    // ---- Free Fire normal / MAX segun el nombre del archivo subido ----
+    function ffNorm(t) { return String(t || '').replace(/~2F/gi, '/').replace(/~2B/gi, '+').replace(/%2F/gi, '/').replace(/%2B/gi, '+').toLowerCase(); }
+    function ffApp() {
+        var f = archivo(); if (!f) return 'ffnormal';
+        var n = ffNorm(f.name);
+        return (C.FFMAX_NOMBRES || []).some(function (h) { return n.indexOf(ffNorm(h)) >= 0; }) ? 'ffmax' : 'ffnormal';
+    }
+    function ffEtiqueta() { return ffApp() === 'ffmax' ? 'Free Fire MAX' : 'Free Fire'; }
+    // tipo: 'shader' | 'pj' | 'aim' -> nombre del archivo que se entrega
+    function ffNombre(tipo) {
+        if (ffApp() === 'ffmax') return C.NOMBRES_MAX[tipo];
+        return { shader: C.NOMBRE_SHADERS, pj: C.NOMBRE_HOLO_PJ, aim: C.NOMBRE_AIM }[tipo];
+    }
+    function ffQ() { return '?app=' + ffApp(); }
     function marcarArchivo() {
         var f = archivo(), z = $('assetDrop'), n = $('assetFileName');
-        if (f) { z.classList.add('has-file'); n.textContent = f.name; }
+        if (f) { z.classList.add('has-file'); n.textContent = f.name + ' · ' + ffEtiqueta(); }
     }
     function initDrop() {
         var z = $('assetDrop'), i = $('assetFile');
@@ -5707,10 +5817,51 @@ window.CONFIG = {
     }
 
     // ======================================================
+    // // SECCION PARA QUE APLICACION (3105 / Filza) //
+    // Despues de generar un archivo se pregunta el destino. Filza = archivo normal.
+    // 3105 = el mismo archivo empaquetado como parche .3105 (ruta de "shaders", "shaders-pj" o "avatar").
+    // ======================================================
+    var parchear = null;   // lo define initParches()
+    function nombreArchivoSeguro(s) { return String(s || 'patch').replace(/[^\p{L}\p{N} +._-]+/gu, '_').slice(0, 80); }
+    // 1) Pregunta la app. o: { nombre, show(id), stepApp, run(dest) }  dest = '3105' | 'filza'
+    function preguntarApp(P, o) {
+        $(P + 'AppFile').textContent = o.nombre;
+        $(P + 'AppBtn3105').onclick = function () { o.run('3105'); };
+        $(P + 'AppBtnFilza').onclick = function () { o.run('filza'); };
+        o.show(o.stepApp);
+    }
+    // 2) Entrega el archivo ya generado en el servidor. o: { url, nombre, tipo, setOk() } -> promesa
+    function entregar(P, o, dest) {
+        if (dest !== '3105') { o.setOk(); return Promise.resolve(); }
+        if (!parchear) return Promise.reject(Error('el módulo de parches no está disponible'));
+        return fetch(o.url).then(function (r) { if (!r.ok) throw Error('HTTP ' + r.status); return r.arrayBuffer(); })
+            .then(function (buf) { return parchear(new Uint8Array(buf), o.nombre, o.tipo, ffApp()); })
+            .then(function (blob) {
+                var fn = nombreArchivoSeguro(o.nombre) + '.3105', a = $(P + 'Download');
+                a.href = URL.createObjectURL(blob); a.setAttribute('download', fn);
+                $(P + 'OkFile').textContent = fn;
+                $(P + 'OkMsg').textContent = '¡Parche 3105 generado!';
+                registrarDescarga('Parche', 'Auto · ' + o.nombre, [{ label: 'Tipo', name: o.tipo }]);
+            });
+    }
+    function haNombre() {
+        var pj = ha.target === 'pj', n = function (c) { return c ? c.name : ''; }, s;
+        if (ha.mode === 'robotico') s = 'Robotico ' + n(ha.inner);
+        else if (ha.mode === 'rtx') s = 'RTX ' + n(ha.border) + '+' + n(ha.inner);
+        else s = n(ha.border) + '+' + n(ha.inner);
+        if (!pj && ha.mode !== 'robotico' && ha.wall) s += '+Pared ' + n(ha.wall);
+        return (pj ? 'PJ ' : '') + s;
+    }
+    function aimNombre(slug, esCache) {
+        var anten = /_antena$/.test(slug), base = slug.replace(/_antena$/, '').replace(/_/g, ' ');
+        return (esCache ? 'cache ' : '') + base + (anten ? '+antena' : '');
+    }
+
+    // ======================================================
     // // SECCION HOLOGRAMAS (HOLOGRAMA ARMA y HOLOGRAMA PJ) //
     // ======================================================
-    var HA = ['haStep0', 'haStep1', 'haStep2', 'haStep3', 'haStep4', 'haStep5', 'haStep6', 'haStep7'];
-    var ha = { target: 'arma', mode: 'normal', border: null, inner: null, wall: null };
+    var HA = ['haStep0', 'haStep1', 'haStep2', 'haStep3', 'haStep4', 'haStep5', 'haStep6', 'haStep7', 'haStepWidth', 'haStepApp'];
+    var ha = { target: 'arma', mode: 'normal', border: null, inner: null, wall: null, width: 4 };
     function haShow(id) { mostrarPaso(HA, id); }
     function hexToRgba(hex) {
         var h = hex.replace('#', '');
@@ -5725,7 +5876,8 @@ window.CONFIG = {
     function haOpen(target) {
         if (target === 'arma' && !requiereArchivo('holoArma', 'Debes subir el archivo original de shaders.')) return;
         if (target === 'pj' && !requiereArchivo('holoPJ', 'Debes subir el archivo original de holo personajes.')) return;
-        ha = { target: target, mode: 'normal', border: null, inner: null, wall: null };
+        ha = { target: target, mode: 'normal', border: null, inner: null, wall: null, width: 4 };
+        haSetWidth(4);
         $('haModalTitle').textContent = target === 'pj' ? 'HOLOGRAMA PJ' : 'HOLOGRAMA ARMA';
         var bi = $('haBorderInfo'); if (bi) bi.style.display = 'none';
         haRtxReset();
@@ -5759,8 +5911,9 @@ window.CONFIG = {
         var pj = ha.target === 'pj', det = [], tipo;
         if (ha.mode === 'robotico') { tipo = 'Robótico'; det.push(chip('Color', ha.inner)); }
         else if (ha.mode === 'rtx') { tipo = 'RTX'; det.push(chip('Interior A', ha.border), chip('Interior B', ha.inner)); }
-        else { tipo = 'Bordes'; det.push(chip('Borde', ha.border), chip('Interior', ha.inner)); }
+        else { tipo = 'Bordes'; det.push(chip('Borde', ha.border), chip('Interior', ha.inner), { label: 'Tamaño borde', name: String(ha.width) + ' / 9' }); }
         if (!pj && ha.mode !== 'robotico') det.push(ha.wall ? chip('Pared', ha.wall) : { label: 'Pared', name: 'Sin pared' });
+        det.push({ label: 'Juego', name: ffEtiqueta() });
         return { tipo: tipo, detalle: det.filter(Boolean) };
     }
     function haMeta() { return { log: haLog(), key_code: keyActual(), device_id: deviceId() }; }
@@ -5771,7 +5924,22 @@ window.CONFIG = {
                 body: JSON.stringify({ categoria: categoria, tipo: tipo, detalle: detalle || [], key_code: keyActual(), device_id: deviceId() }) }).catch(function () {});
         } catch (e) {}
     }
-    function haEnviar() {
+    // --- Tamaño del borde (_OutlineWidth, solo el 1er valor): solo holograma con bordes (arma y PJ) ---
+    function haSetWidth(v) {
+        var r = $('haOutlineWidthRange'); if (!r) return;
+        v = Math.min(9, Math.max(1, parseInt(v, 10) || 4));
+        r.value = v; ha.width = v;
+        r.style.setProperty('--p', ((v - 1) / 8 * 100) + '%');
+        var o = $('haOutlineWidthValue'); if (o) o.textContent = v;
+    }
+    function haPreguntar() {
+        if (ha.mode === 'normal') { haSetWidth(ha.width || 4); haShow('haStepWidth'); return; }
+        haPreguntarApp();
+    }
+    function haPreguntarApp() {
+        preguntarApp('ha', { nombre: haNombre(), show: haShow, stepApp: 'haStepApp', run: haEnviar });
+    }
+    function haEnviar(dest) {
         haShow('haStep5');
         var pj = ha.target === 'pj';
         var url = pj ? '/procesar-holo-pj' : '/procesar';
@@ -5780,15 +5948,23 @@ window.CONFIG = {
             : ha.mode === 'rtx'
                 ? { color_principal: ha.border.rgba, color_secundario: ha.inner.rgba, color_pared: ha.wall ? ha.wall.rgba : null, tipo_holograma: 'rtx' }
                 : { color_principal: ha.inner.rgba, color_secundario: ha.border.rgba, color_pared: ha.wall ? ha.wall.rgba : null, tipo_holograma: ha.mode };
+        if (ha.mode === 'normal') body.ancho_borde = ha.width;
+        body.app = ffApp();
         var meta = haMeta(); for (var mk in meta) body[mk] = meta[mk];
-        $('haProcessingMsg').textContent = pj ? 'Aplicando cambios al archivo pj.3d...' : 'Aplicando cambios al archivo...';
+        $('haProcessingMsg').textContent = dest === '3105' ? 'Convirtiendo a 3105...' : (pj ? 'Aplicando cambios al archivo pj.3d...' : 'Aplicando cambios al archivo...');
         fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
             .then(function (r) { return r.text().then(function (t) { try { return JSON.parse(t); } catch (e) { return { success: false, error: 'HTTP ' + r.status + ' (respuesta no JSON, mira la consola del servidor)' }; } }); })
             .then(function (d) {
                 if (d.success) {
-                    descargaLink('ha', pj ? '/descargar-holo-pj' : '/descargar', pj ? C.NOMBRE_HOLO_PJ : C.NOMBRE_SHADERS,
-                        pj ? '¡Holo Personaje generado!' : '¡Shaders generado correctamente!');
-                    haShow('haStep7');
+                    var urlDl = (pj ? '/descargar-holo-pj' : '/descargar') + ffQ();
+                    entregar('ha', {
+                        url: urlDl, nombre: haNombre(), tipo: pj ? 'shaders-pj' : 'shader',
+                        setOk: function () {
+                            descargaLink('ha', urlDl, ffNombre(pj ? 'pj' : 'shader'),
+                                pj ? '¡Holo Personaje generado!' : '¡Shaders generado correctamente!');
+                        }
+                    }, dest).then(function () { haShow('haStep7'); })
+                      .catch(function (e) { $('haErrorMsg').textContent = 'No se pudo convertir a 3105: ' + (e && e.message ? e.message : e); haShow('haStep6'); });
                 } else {
                     $('haErrorMsg').textContent = pj ? (d.error ? 'Error del servidor: ' + d.error : (ha.mode === 'robotico' ? 'No se encontró holo_pj/pj_robotico.3d o no hubo coincidencias.' : 'No se encontró holo_pj/pj.3d o no hubo coincidencias.')) : (d.error ? 'Error del servidor: ' + d.error : (ha.mode === 'rtx' ? 'No se encontró entrada/holo_rtx.3d o no hubo coincidencias (revisa que tenga _InteriorColorA/_InteriorColorB en esos path IDs).' : 'No se encontró el archivo original en la carpeta entrada.'));
                     haShow('haStep6');
@@ -5820,7 +5996,7 @@ window.CONFIG = {
             ha.inner = colorDeFila(r);
             if (ha.target === 'pj' || ha.mode === 'robotico') {
                 if (ha.mode === 'robotico') ha.border = ha.inner;
-                haEnviar();
+                haPreguntar();
             } else {
                 setDot('haOloDot', 'haOloName', ha.inner);
                 if (ha.mode === 'rtx') $('haOloName').textContent = 'A: ' + ha.border.name + ' · B: ' + ha.inner.name;
@@ -5829,7 +6005,7 @@ window.CONFIG = {
         });
         on('haColorsWall', 'click', function (e) {
             var r = e.target.closest('.ha-color-row'); if (!r) return;
-            ha.wall = colorDeFila(r); haEnviar();
+            ha.wall = colorDeFila(r); haPreguntar();
         });
         // modos
         on('haBtnBordes', 'click', function () {
@@ -5851,9 +6027,12 @@ window.CONFIG = {
             var bi = $('haBorderInfo'); if (bi) bi.style.display = 'none';
             haShow('haStep2');
         });
-        on('haBtnNoWall', 'click', function () { ha.wall = null; haEnviar(); });
+        on('haBtnNoWall', 'click', function () { ha.wall = null; haPreguntar(); });
         on('haBtnSiWall', 'click', function () { haShow('haStep4'); });
         // volver
+        on('haOutlineWidthRange', 'input', function () { haSetWidth(this.value); });
+        on('haApplyOutlineWidth', 'click', function () { haPreguntarApp(); });
+        on('haBackOutlineWidth', 'click', function () { haShow(ha.target === 'pj' ? 'haStep2' : 'haStep3'); });
         on('haBack1', 'click', function () { haShow('haStep0'); });
         on('haBack2', 'click', function () { haShow(ha.mode === 'robotico' ? 'haStep0' : 'haStep1'); });
         on('haBack3', 'click', function () { haShow('haStep2'); });
@@ -5890,17 +6069,28 @@ window.CONFIG = {
             });
         });
         on(cfg.siBtn, 'click', function () {
-            var slug = cfg.map[pend.clave]; show(cfg.stepProc);
-            fetch('/descargar-aim/' + slug, { method: 'HEAD' }).then(function (r) {
-                if (!r.ok) throw 0;
-                descargaLink(cfg.pref, '/descargar-aim/' + slug, C.NOMBRE_AIM, '¡Archivo de ' + pend.label + ' generado!');
-                var tipoAim = pend.label.toLowerCase().replace(/\b\w/g, function (c) { return c.toUpperCase(); });
-                var detAim = [{ label: 'Modo', name: cfg.pref === 'cache' ? 'Cache' : 'Avatar' }];
-                if (cfg.pref !== 'cache') detAim.push({ label: 'Antena', name: /^antena/.test(pend.clave) ? 'Con antena' : 'Sin antena' });
-                registrarDescarga('Aimbot', tipoAim, detAim);
-                show(cfg.stepOk);
-            }).catch(function () {
-                $(cfg.pref + 'ErrMsg').textContent = 'La opción ' + pend.label + ' está en mantenimiento temporalmente.'; show(cfg.stepErr);
+            var slug = cfg.map[pend.clave], lblAim = pend.label, claveAim = pend.clave;
+            var stepApp = cfg.pref === 'cache' ? 'cacheStepApp' : 'avStepApp';
+            preguntarApp(cfg.pref, {
+                nombre: aimNombre(slug, cfg.pref === 'cache'), show: show, stepApp: stepApp,
+                run: function (dest) {
+                    show(cfg.stepProc);
+                    var pm = $(cfg.pref + 'ProcMsg'); if (pm) pm.textContent = dest === '3105' ? 'Convirtiendo a 3105...' : 'Procesando...';
+                    fetch('/descargar-aim/' + slug + ffQ(), { method: 'HEAD' }).then(function (r) {
+                        if (!r.ok) throw 0;
+                        var tipoAim = lblAim.toLowerCase().replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+                        var detAim = [{ label: 'Modo', name: cfg.pref === 'cache' ? 'Cache' : 'Avatar' }];
+                        if (cfg.pref !== 'cache') detAim.push({ label: 'Antena', name: /^antena/.test(claveAim) ? 'Con antena' : 'Sin antena' });
+                        detAim.push({ label: 'Juego', name: ffEtiqueta() });
+                        registrarDescarga('Aimbot', tipoAim, detAim);
+                        return entregar(cfg.pref, {
+                            url: '/descargar-aim/' + slug + ffQ(), nombre: aimNombre(slug, cfg.pref === 'cache'), tipo: 'avatar',
+                            setOk: function () { descargaLink(cfg.pref, '/descargar-aim/' + slug + ffQ(), ffNombre('aim'), '¡Archivo de ' + lblAim + ' generado!'); }
+                        }, dest);
+                    }).then(function () { show(cfg.stepOk); }).catch(function () {
+                        $(cfg.pref + 'ErrMsg').textContent = 'La opción ' + lblAim + ' está en mantenimiento temporalmente.'; show(cfg.stepErr);
+                    });
+                }
             });
         });
         modal.addEventListener('hidden.bs.modal', function () { show(cfg.step0); });
@@ -5916,13 +6106,13 @@ window.CONFIG = {
         if ($('avatarDumpModal')) {
             initAim({
                 modal: 'avatarDumpModal', pref: 'av', map: C.AIM_AVATAR, prefijoOnclick: 'avConfirm',
-                steps: ['avStep0', 'avStepConfirm', 'avStepProc', 'avStepErr', 'avOk'],
+                steps: ['avStep0', 'avStepConfirm', 'avStepProc', 'avStepErr', 'avOk', 'avStepApp'],
                 step0: 'avStep0', stepConfirm: 'avStepConfirm', stepProc: 'avStepProc', stepErr: 'avStepErr', stepOk: 'avOk',
                 confirmTitle: 'avConfirmTitle', siBtn: 'avConfirmYes', noBtns: [], btnSelector: '[data-rx7-button="avatar"]'
             });
             // el boton NO del paso de confirmacion y el boton volver del error
             document.querySelectorAll('#avStepConfirm button:not(#avConfirmYes), #avStepErr button').forEach(function (b) {
-                b.addEventListener('click', function () { mostrarPaso(['avStep0', 'avStepConfirm', 'avStepProc', 'avStepErr', 'avOk'], 'avStep0'); });
+                b.addEventListener('click', function () { mostrarPaso(['avStep0', 'avStepConfirm', 'avStepProc', 'avStepErr', 'avOk', 'avStepApp'], 'avStep0'); });
             });
             // pestañas SIN ANTENA / CON ANTENA
             on('avTabNoAntenna', 'click', function () { $('avNoAntennaOptions').style.display = ''; $('avAntennaOptions').style.display = 'none'; });
@@ -5932,12 +6122,12 @@ window.CONFIG = {
         if ($('cacheModal')) {
             initAim({
                 modal: 'cacheModal', pref: 'cache', map: C.AIM_CACHE, prefijoOnclick: 'cacheGoConfirm',
-                steps: ['cacheStep0', 'cacheStepConfirm', 'cacheStepProc', 'cacheStepErr', 'cacheOk'],
+                steps: ['cacheStep0', 'cacheStepConfirm', 'cacheStepProc', 'cacheStepErr', 'cacheOk', 'cacheStepApp'],
                 step0: 'cacheStep0', stepConfirm: 'cacheStepConfirm', stepProc: 'cacheStepProc', stepErr: 'cacheStepErr', stepOk: 'cacheOk',
                 confirmTitle: 'cacheConfirmTitle', siBtn: 'cacheSiBtn', noBtns: [], btnSelector: '[data-rx7-button="cache"]'
             });
             document.querySelectorAll('#cacheStepConfirm button:not(#cacheSiBtn), #cacheStepErr button').forEach(function (b) {
-                b.addEventListener('click', function () { mostrarPaso(['cacheStep0', 'cacheStepConfirm', 'cacheStepProc', 'cacheStepErr', 'cacheOk'], 'cacheStep0'); });
+                b.addEventListener('click', function () { mostrarPaso(['cacheStep0', 'cacheStepConfirm', 'cacheStepProc', 'cacheStepErr', 'cacheOk', 'cacheStepApp'], 'cacheStep0'); });
             });
         }
     }
@@ -5964,7 +6154,7 @@ window.CONFIG = {
             if (!input.files[0]) return;
             btnGen.disabled = true; err.style.display = 'none';
             st.style.color = 'var(--text-muted)'; st.textContent = 'Generando... puede tardar unos segundos.';
-            var fd = new FormData(); fd.append('imagen', input.files[0]); fd.append('key_code', keyActual()); fd.append('device_id', deviceId());
+            var fd = new FormData(); fd.append('imagen', input.files[0]); fd.append('key_code', keyActual()); fd.append('device_id', deviceId()); fd.append('app', ffApp());
             fetch('/generar-cielo', { method: 'POST', body: fd }).then(function (res) {
                 if (!res.ok) {
                     return res.json().catch(function () { return {}; }).then(function (j) {
@@ -6078,7 +6268,7 @@ window.CONFIG = {
         function makeBplist(root){let objs=[],ids=new Map();function add(v){let key;if(v instanceof Uint8Array)key='D'+Array.from(v).join(',');else if(v instanceof Date)key='T'+v.getTime();else key=typeof v==='object'&&v!==null?'O'+objs.length:typeof v+':'+String(v);if(ids.has(key))return ids.get(key);let i=objs.length;ids.set(key,i);objs.push(v);if(Array.isArray(v))v.forEach(add);else if(v&&typeof v==='object'&&!(v instanceof Uint8Array)&&!(v instanceof Date))Object.keys(v).forEach(k=>{add(k);add(v[k])});return i}objectBytes._index=add;add(root);let rs=bytesForInt(objs.length-1),body=[],offsets=[],pos=8;for(let v of objs){let b=objectBytes(v,rs);offsets.push(pos);body.push(b);pos+=b.length}let os=bytesForInt(pos),ot=pos,head=new Uint8Array([0x62,0x70,0x6c,0x69,0x73,0x74,0x30,0x30]),off=concat(offsets.map(x=>putInt(x,os))),tr=new Uint8Array(32);tr[6]=os;tr[7]=rs;tr.set(putInt(objs.length,8),8);tr.set(putInt(0,8),16);tr.set(putInt(ot,8),24);return concat([head,...body,off,tr])}
         function concat2(a,b){return concat([a,b])}
         const ROUTE_CONFIG=Object.freeze({
-          avatar:{base:'Documents/contentcache/Compulsory/ios/gameassetbundles/assetindexer',suffixes:Object.freeze({'com.dts.freefireth':'.U6Zffc4YIR3DsINj3cXvYGAqz58~3D','com.dts.freefiremax':'.YJ~2FW7EkU5pRkVg51NrKyx4LXid8~3D'})},
+          avatar:{base:'Documents/contentcache/Compulsory/ios/gameassetbundles/avatar/assetindexer',suffixes:Object.freeze({'com.dts.freefireth':'.U6Zffc4YIR3DslNj3cXvYGAqz58~3D','com.dts.freefiremax':'.YJ~2FW7EkU5pRkVg51NrKyx4LXid8~3D'})},
           shader:{base:'Documents/contentcache/Optional/ios/gameassetbundles/shaders',suffixes:Object.freeze({'com.dts.freefireth':'.P0K3UG2TfecMBhWMMV~2Fu8ReudIk~3D','com.dts.freefiremax':'.eDjuzR1octvcFd~2BTzimtXF99jqU~3D'})},
           'shaders-pj':{base:'Documents/contentcache/Optional/ios/optionalavatarres/optionalavatarres_commonab_shader',suffixes:Object.freeze({'com.dts.freefireth':'.BNrjwQsbTrqz6jACY9i6FB6DyYI~3D','com.dts.freefiremax':'.ZOTOLfa7PnFy5QmmkFI10R0wVww~3D'})}
         });
@@ -6175,11 +6365,29 @@ window.CONFIG = {
             setSt('ptCrStatus', 'Generado correctamente: ' + fn.nombre + '\nNombre: ' + name + '\nTamaño: ' + fn.size.toLocaleString() + ' bytes', 'ok');
             registrarParche('Crear', name);
         }
-        async function empaquetar(env, payload, key, salida) {
+        async function cifrarParche(env, payload, key) {
             var plain = makeBplist(payload), nonce = crypto.getRandomValues(new Uint8Array(12));
             var enc = new Uint8Array(await crypto.subtle.encrypt({ name: 'AES-GCM', iv: nonce, additionalData: te.encode('3105PATCH/v' + env.schemaVersion + '/payload/' + env.packageID) }, await aesKey(key), plain));
             env.encryptedPayload = concat2(nonce, enc);
-            var out = concat2(te.encode('3105PATCH\0'), makeBplist(env)), nombre = salida;
+            return concat2(te.encode('3105PATCH\0'), makeBplist(env));
+        }
+        // Parche automatico (Free Fire / Free Fire MAX) para los archivos que genera la pagina.
+        // La ruta usa el MISMO nombre de archivo que se entrega para Filza, asi siempre coinciden.
+        parchear = async function (asset, name, tipo, app) {
+            var max = app === 'ffmax', bundleID = max ? 'com.dts.freefiremax' : 'com.dts.freefireth';
+            var dirs = { shader: 'Documents/contentcache/Optional/ios/gameassetbundles/', 'shaders-pj': 'Documents/contentcache/Optional/ios/optionalavatarres/', avatar: 'Documents/contentcache/Compulsory/ios/gameassetbundles/' };
+            var clave = { shader: 'shader', 'shaders-pj': 'pj', avatar: 'aim' }[tipo];
+            var fileName = max ? C.NOMBRES_MAX[clave] : { shader: C.NOMBRE_SHADERS, pj: C.NOMBRE_HOLO_PJ, aim: C.NOMBRE_AIM }[clave];
+            var route = dirs[tipo] + fileName, id = uuid(), now = new Date();
+            var r = { id: id, bundleID: bundleID, relativePath: route, replacementFilename: route.split('/').pop(), replacementData: asset };
+            var dig = {}; dig[id] = await sha(asset);
+            var payload = { project: { id: id, name: name, author: '', isPrivate: false, createdAt: now, updatedAt: now, bundleIdentifiers: [bundleID], directories: [], rules: [r] }, replacementDigests: dig };
+            var key = crypto.getRandomValues(new Uint8Array(32));
+            var env = { schemaVersion: 1, packageID: id, isPasswordProtected: false, publicContentKey: key, keyFingerprint: await sha(key) };
+            return new Blob([await cifrarParche(env, payload, key)], { type: 'application/octet-stream' });
+        };
+        async function empaquetar(env, payload, key, salida) {
+            var out = await cifrarParche(env, payload, key), nombre = salida;
             if (!/\.3105$/i.test(nombre)) nombre += '.3105';
             descargar(new Blob([out], { type: 'application/octet-stream' }), nombre);
             return { nombre: nombre, size: out.length };
